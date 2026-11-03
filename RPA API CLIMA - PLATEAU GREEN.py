@@ -51,11 +51,10 @@ def decrypt(enc, key):
     return "".join(dec)
 
 # PLATEAU
-key = 'REDACTED'
-site_url_plateau = 'REDACTED_PATH'
-login  = 'REDACTED'
-passwd = 'REDACTED'
-passwd = decrypt(passwd, key)
+key = os.environ["PLATEAU_KEY"]
+site_url_plateau = os.environ["PLATEAU_SITE_URL"]
+login = os.environ["PLATEAU_LOGIN"]
+passwd = os.environ["PLATEAU_PASSWORD"]
 
 ctx = ClientContext(site_url_plateau).with_credentials(UserCredential(login, passwd))
 web = ctx.web
