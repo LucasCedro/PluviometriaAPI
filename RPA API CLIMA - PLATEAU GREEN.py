@@ -66,7 +66,7 @@ print("Conectando: {0}".format(web.properties['Title']))
 yesterday = date.today() - timedelta(days=1)
 
 # arquivo = pastaLeitura  + '/' + file_name
-share_url = 'REDACTED_PATH'
+share_url = os.environ["PLATEAU_SHARE_PATH"]
 share_file = 'Base_Temperatura - TESTE.xlsx'
 arquivo = downloadToTemp(share_url + '/' + share_file) #baixo do SHAREPOINT
 print('1 - Download: {}'.format(arquivo))
